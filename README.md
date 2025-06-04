@@ -212,3 +212,78 @@ Votre installation de GLPI est maintenant prête. Pensez à : ✅ Modifier les p
 
 Bonne gestion avec GLPI ! 🎉
 
+Parfait, organisons toute l’installation de **GLPI avec GLPI-Agent (ex-FusionInventory)** dans une structure claire adaptée à une **organisation (entreprise ou institution)**. Voici un plan **professionnel, complet et structuré** pour le déploiement.
+
+---
+
+## 🏢 **Installation de GLPI + GLPI-Agent dans une Organisation**
+
+---
+
+### 🔹 **1. Préparation de l’environnement GLPI**
+
+
+
+### 🔹 **Installation du plugin GLPI-Inventory (Remplace FusionInventory)**
+
+#### 📥 Télécharger et installer le plugin
+
+```bash
+cd /var/www/html/glpi/plugins
+sudo https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.5.2/glpi-glpiinventory-1.5.2.tar.bz2
+sudo tar -xvjf glpi-inventory-1.5.0.tar.bz2
+sudo rm glpi-inventory-1.5.0.tar.bz2
+sudo chown -R www-data:www-data glpi-inventory
+```
+
+#### 🌐 Activer via l’interface web
+
+1. Se connecter à GLPI (interface web)
+2. Aller dans **Configuration > Plugins**
+3. Cliquer sur **Installer** puis **Activer** le plugin `glpi-inventory`
+
+---
+
+### 🔹 ** Installation de l’agent GLPI sur les machines clientes**
+
+#### 🖥️ Sous Linux
+
+```bash
+cd /tmp
+wget https://github.com/glpi-project/glpi-agent/releases/download/1.14/glpi-agent_1.14-2_all.deb
+sudo dpkg -i glpi-agent_1.8.1_all.deb
+sudo apt install -f
+```
+
+Configurer l'URL du serveur GLPI :
+
+```bash
+sudo nano /etc/glpi-agent/glpi-agent.conf
+# Ajouter :
+server=https://glpi.mondomaine.com/glpi
+```
+
+Redémarrer le service :
+
+```bash
+sudo systemctl restart glpi-agent
+sudo systemctl enable glpi-agent
+```
+
+
+
+### 🔹 ** Organisation du parc informatique dans GLPI**
+
+#### 🧩 Recommandations :
+
+* Créez des **Entités** pour chaque département ou site
+* Utilisez des **Modèles de matériel**
+* Déployez les **agents via GPO (Windows)** ou **Ansible (Linux)** en masse
+* Ajoutez des **règles d’importation automatique** pour les ordinateurs
+* Planifiez des **inventaires périodiques** (ex. chaque nuit à 2h)
+
+---
+
+
+
+

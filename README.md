@@ -48,7 +48,7 @@ Créer la base de données et l'utilisateur GLPI :
 ```sh
 mysql -uroot -p
 CREATE DATABASE glpi;
-CREATE USER 'glpi'@'localhost' IDENTIFIED BY 'yourstrongpassword';
+CREATE USER 'glpi'@'localhost' IDENTIFIED BY 'qwerty';
 GRANT ALL PRIVILEGES ON glpi.* TO 'glpi'@'localhost';
 GRANT SELECT ON mysql.time_zone_name TO 'glpi'@'localhost';
 FLUSH PRIVILEGES;
@@ -140,7 +140,7 @@ Ajouter :
 
 ```apache
 <VirtualHost *:80>
-    ServerName yourglpi.yourdomain.com
+    ServerName serverweb.glpi.local
     DocumentRoot /var/www/html/glpi/public
     <Directory /var/www/html/glpi/public>
         Require all granted
@@ -165,7 +165,7 @@ systemctl restart apache2
 Configuration PHP :
 
 ```sh
-nano /etc/php/8.1/apache2/php.ini
+nano /etc/php/8.3/apache2/php.ini
 ```
 
 Modifier :
@@ -189,9 +189,19 @@ date.timezone = Your/Timezone
 Ouvrir un navigateur et accéder à :
 
 ```
-http://yourglpi.yourdomain.com
 ```
 
+Suivre l'assistant d'installation :
+
+Choisir la langue
+
+Accepter la licence
+
+Vérification des prérequis
+
+Configuration de la base de données (utiliser les identifiants créés précédemment)
+
+Finaliser l'installation
 Suivez les instructions pour finaliser l'installation.
 
 ---

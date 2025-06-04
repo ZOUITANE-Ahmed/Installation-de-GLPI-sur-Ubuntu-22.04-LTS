@@ -65,6 +65,8 @@ EXIT;
 cd /var/www/html
 wget https://github.com/glpi-project/glpi/releases/download/10.0.18/glpi-10.0.18.tgz
 tar -xvzf glpi-10.0.18.tgz
+sudo chown -R www-data:www-data /var/www/html/glpi
+sudo chmod -R 755 /var/www/html/glpi
 ```
 
 Organisation des fichiers :

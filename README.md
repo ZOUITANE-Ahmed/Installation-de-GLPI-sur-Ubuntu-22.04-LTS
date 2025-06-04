@@ -78,7 +78,7 @@ mv /var/lib/glpi/_log /var/log/glpi
 Créer le fichier `downstream.php` :
 
 ```sh
-vim /var/www/html/glpi/inc/downstream.php
+nano /var/www/html/glpi/inc/downstream.php
 ```
 
 Ajouter :
@@ -94,7 +94,7 @@ if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
 Créer le fichier `local_define.php` :
 
 ```sh
-vim /etc/glpi/local_define.php
+nano /etc/glpi/local_define.php
 ```
 
 Ajouter :
@@ -133,7 +133,7 @@ find /var/log/glpi -type d -exec chmod 0755 {} \;
 Créer un VirtualHost :
 
 ```sh
-vim /etc/apache2/sites-available/glpi.conf
+nano /etc/apache2/sites-available/glpi.conf
 ```
 
 Ajouter :
@@ -165,7 +165,7 @@ systemctl restart apache2
 Configuration PHP :
 
 ```sh
-vim /etc/php/8.1/apache2/php.ini
+nano /etc/php/8.1/apache2/php.ini
 ```
 
 Modifier :

@@ -63,8 +63,8 @@ EXIT;
 
 ```sh
 cd /var/www/html
-wget https://github.com/glpi-project/glpi/releases/download/10.0.18/glpi-10.0.18.tgz
-tar -xvzf glpi-10.0.18.tgz
+wget https://github.com/glpi-project/glpi/releases/download/11.0.0-beta/glpi-11.0.0-beta.tgz
+tar -xvzf glpi-11.0.0-beta.tgz
 sudo chown -R www-data:www-data /var/www/html/glpi
 sudo chmod -R 755 /var/www/html/glpi
 ```

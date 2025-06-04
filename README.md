@@ -230,7 +230,7 @@ Parfait, organisons toute l’installation de **GLPI avec GLPI-Agent (ex-FusionI
 
 ```bash
 cd /var/www/html/glpi/plugins
-sudo https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.5.2/glpi-glpiinventory-1.5.2.tar.bz2
+wget https://github.com/glpi-project/glpi-inventory-plugin/releases/download/1.5.2/glpi-glpiinventory-1.5.2.tar.bz2
 sudo tar -xvjf glpi-inventory-1.5.0.tar.bz2
 sudo rm glpi-inventory-1.5.0.tar.bz2
 sudo chown -R www-data:www-data glpi-inventory

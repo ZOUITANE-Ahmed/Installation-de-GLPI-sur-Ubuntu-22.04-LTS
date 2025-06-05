@@ -46,8 +46,8 @@ apt install -y php php-{apcu,cli,common,curl,gd,imap,ldap,mysql,xmlrpc,xml,mbstr
 
 ```bash
 cd /var/www/html
-wget https://github.com/glpi-project/glpi/releases/download/11.0.0-beta/glpi-11.0.0-beta.tgz
-tar -xzf glpi-11.0.0-beta.tgz
+wget https://github.com/glpi-project/glpi/releases/download/10.0.15/glpi-10.0.15.tgz
+tar -xzf glpi-10.0.15.tgz
 chown -R www-data:www-data glpi
 chmod -R 755 glpi
 ```

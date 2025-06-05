@@ -66,7 +66,6 @@ Configurer le fichier `downstream.php` :
 nano /var/www/html/glpi/inc/downstream.php
 ```
 ```php
-# /var/www/html/glpi/inc/downstream.php
 <?php
 define('GLPI_CONFIG_DIR', '/etc/glpi/');
 if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
@@ -81,7 +80,6 @@ nano /etc/glpi/local_define.php
 ```
 
 ```php
-# /etc/glpi/local_define.php
 <?php
 define('GLPI_VAR_DIR', '/var/lib/glpi');
 define('GLPI_DOC_DIR', GLPI_VAR_DIR);
@@ -125,7 +123,6 @@ nano /etc/apache2/sites-available/glpi.conf
 ```
 
 ```apache
-# /etc/apache2/sites-available/glpi.conf
 <VirtualHost *:80>
     ServerName glpi.entreprise.local
     DocumentRoot /var/www/html/glpi/public
@@ -151,6 +148,9 @@ systemctl reload apache2
 
 Configurer `php.ini` :
 
+```sh
+nano /etc/apache2/sites-available/glpi.conf
+```
 ```ini
 upload_max_filesize = 20M
 post_max_size = 20M

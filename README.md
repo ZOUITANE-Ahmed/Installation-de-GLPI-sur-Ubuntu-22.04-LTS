@@ -60,6 +60,7 @@ mv glpi/files /var/lib/glpi
 mv /var/lib/glpi/_log /var/log/glpi
 ```
 
+
 Configurer le fichier `downstream.php` :
 
 ```sh
@@ -85,7 +86,20 @@ define('GLPI_VAR_DIR', '/var/lib/glpi');
 define('GLPI_DOC_DIR', GLPI_VAR_DIR);
 define('GLPI_LOG_DIR', '/var/log/glpi');
 ```
+Permissions des fichiers et dossiersPermissions
 
+```bash
+chown root:root /var/www/html/glpi/ -R
+chown www-data:www-data /etc/glpi -R
+chown www-data:www-data /var/lib/glpi -R
+chown www-data:www-data /var/log/glpi -R
+chown www-data:www-data /var/www/html/glpi/marketplace -Rf
+
+find /var/www/html/glpi/ -type f -exec chmod 0644 {} \;
+find /var/www/html/glpi/ -type d -exec chmod 0755 {} \;
+find /etc/glpi -type f -exec chmod 0644 {} \;
+find /var/lib/glpi -type d -exec chmod 0755 {} \;
+```
 ---
 
 ## 🛡️ 3. Sécurisation de MariaDB

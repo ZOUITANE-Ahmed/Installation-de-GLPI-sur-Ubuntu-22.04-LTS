@@ -62,6 +62,9 @@ mv /var/lib/glpi/_log /var/log/glpi
 
 Configurer le fichier `downstream.php` :
 
+```sh
+nano /var/www/html/glpi/inc/downstream.php
+```
 ```php
 # /var/www/html/glpi/inc/downstream.php
 <?php
@@ -72,6 +75,10 @@ if (file_exists(GLPI_CONFIG_DIR . '/local_define.php')) {
 ```
 
 Configurer `local_define.php` :
+
+```sh
+nano /etc/glpi/local_define.php
+```
 
 ```php
 # /etc/glpi/local_define.php
@@ -94,7 +101,7 @@ Configurer la base GLPI :
 ```sql
 mysql -uroot -p
 CREATE DATABASE glpi;
-CREATE USER 'glpi'@'localhost' IDENTIFIED BY 'UnMotDePasseSécurisé!';
+CREATE USER 'glpi'@'localhost' IDENTIFIED BY 'qwerty@123';
 GRANT ALL PRIVILEGES ON glpi.* TO 'glpi'@'localhost';
 GRANT SELECT ON mysql.time_zone_name TO 'glpi'@'localhost';
 FLUSH PRIVILEGES;
@@ -112,6 +119,10 @@ mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql mysql
 ## ⚙️ 4. Configuration Apache et PHP
 
 Créer un VirtualHost :
+
+```sh
+nano /etc/apache2/sites-available/glpi.conf
+```
 
 ```apache
 # /etc/apache2/sites-available/glpi.conf

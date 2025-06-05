@@ -149,7 +149,7 @@ systemctl reload apache2
 Configurer `php.ini` :
 
 ```sh
-nano /etc/apache2/sites-available/glpi.conf
+nano /etc/php/8.3/apache2/php.ini
 ```
 ```ini
 upload_max_filesize = 20M
